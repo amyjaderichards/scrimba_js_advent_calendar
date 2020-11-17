@@ -3,12 +3,20 @@
 // For symbol 'q', the output should be characterParity(symbol) = "not a digit";
 
 function characterParity(str) {
+    // one way to do it 
     if(parseInt(str) % 2 == 0) {
         return "even";
     } else if (parseInt(str) % 2 == 1) {
         return "odd"
     } else {
         return "not a digit";
+    }
+
+    // another way to do it
+    const num = parseInt(str);
+
+    if(isNaN(num)) {
+        return num % 2 === 0 ? "even" : "odd";
     }
 }
 
